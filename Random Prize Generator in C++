@@ -1,0 +1,32 @@
+#include<iostream>
+#include<ctime>
+using namespace std;
+int main ()
+{
+    cout<<"Random Prize Generator"<<'\n';// By KahlubDev
+    srand(time(NULL));//Seed is set to current time to get a random number
+    int randNum = (rand() % 5) + 1; //+1 to have numbers 1 to 5 
+    
+    switch (randNum)
+    {
+    case 1:
+        cout<<"You win a Naivas gift card !";
+        break;
+    case 2:
+        cout<<"You win a Lunch at Sarova Woodlands !";
+        break;
+    case 3:
+        cout<<"You win a free service at Auto Express !";
+        break;
+    case 4:
+        cout<<"You win a  trip to Diani !";
+        break;
+    case 5:
+        cout<<"You win a Sauti Sol Concert ticket";
+        break;
+    default:
+    cout<<"You were not lucky try again";
+    break;
+    }
+
+}
