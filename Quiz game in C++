@@ -1,0 +1,61 @@
+//Quiz game in C++ by KahlubDev
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+    string questions[] = {
+        "1. Which of the following is a correct C++ comment?",
+        "2. Which header is required for cout and cin?",
+        "3. Which data type stores decimal values?",
+        "4. Which symbol ends a C++ statement?",
+        "5. What does the keyword return do?"
+    };
+
+    
+    string options[5][4] = {
+        {"A. # comment", "B. // comment", "C. /* comment */", "D. Both B and C"},
+        {"A. <iostream>", "B. <stdio.h>", "C. <iomanip>", "D. <string>"},
+        {"A. int", "B. double", "C. char", "D. bool"},
+        {"A. !", "B. :", "C. ;", "D. ."},
+        {"A. Exits a function", "B. Pauses program", "C. Declares variable", "D. Runs loop again"}
+    };
+
+    
+    char answers[] = {'D', 'A', 'B', 'C', 'A'};
+
+    int totalQuestions = 5;
+    int score = 0;
+
+    cout << "===  C++ QUIZ GAME ===\n";
+
+    
+    for (int i = 0; i < totalQuestions; i++) {
+        cout << "\n" << questions[i] << endl;
+
+        
+        for (int j = 0; j < 4; j++) {
+            cout << options[i][j] << endl;
+        }
+
+        char userAnswer;
+        cout << "Enter your answer (A/B/C/D): ";
+        cin >> userAnswer;
+
+        
+        userAnswer = toupper(userAnswer);
+
+        if (userAnswer == answers[i]) {
+            score++;
+        }
+    }
+
+    
+    cout << "\n==============================\n";
+    cout << "Your final score: " << score << " / " << totalQuestions << endl;
+    cout << "==============================\n";
+
+    cout << "=== END OF C++ QUIZ GAME ===\n";
+
+    return 0;
+}
